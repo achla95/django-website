@@ -1,0 +1,12 @@
+<h1>it works</h1>
+
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <form method="POST" class="post-form" enctype="multipart/form-data">
+    {%csrf_token%}
+    {{form.as_p}}
+    <button type="submit"class="save btn btn-default">Save</button>
+    </form>
+{% else %}
+  <p>login first</p>
+{% endif %}
