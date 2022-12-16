@@ -7,6 +7,11 @@
     {{form.as_p}}
     <button type="submit"class="save btn btn-default">Save</button>
     </form>
+    {% if files %} 
+      {% for file in files %}
+        <p>File uploaded at <a href=">{{ file.file.url }}">{{MEDIA_URL}}{{ file.file.url }}</a> </p>
+      {% endfor %}
+    {% endif %}
 {% else %}
   <p>login first</p>
 {% endif %}
